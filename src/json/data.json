@@ -1,0 +1,111 @@
+{
+  "nodes": [
+    {
+      "id": "a1",
+      "title": "a1",
+      "status": "success",
+      "content": "测试内容\r\n测试内容测试内容"
+    },
+    {
+      "id": "b1",
+      "title": "b1",
+      "status": "warning",
+      "content": "测试异常异常\r\n测试测试异常异常内容"
+    },
+    {
+      "id": "b2",
+      "title": "b2",
+      "status": "error",
+      "content": "成功节点成功节点"
+    },
+    {
+      "id": "c1",
+      "title": "c1",
+      "status": "default",
+      "content": "无换行符测试内容测试内容测试内容"
+    },
+    {
+      "id": "c2",
+      "title": "c2",
+      "status": "error",
+      "content": [
+        {
+          "label": "姓名",
+          "value": "张三"
+        },
+        {
+          "label": "年龄",
+          "value": "18"
+        },
+        {
+          "label": "时间",
+          "value": "2018-09-07"
+        },
+        {
+          "label": "描述",
+          "value": "xxxxxxxxxxxxxxxxxxxxxxxx"
+        }
+      ]
+    },
+    {
+      "id": "c3",
+      "title": "c3",
+      "content": "无换行符测试内容测试内容测试内容",
+      "info": {
+        "serviceOrderCode": "LBX032749142837532",
+        "serviceNodeCode": null,
+        "serviceNodeName": "交易出库",
+        "status": 1,
+        "userType": "seller",
+        "feeCode": null,
+        "feeName": null,
+        "statusStr": "未发起计费"
+      }
+    },
+    {
+      "id": "d1",
+      "title": "d1",
+      "status": "blue",
+      "content": "无换行符测试内容测试内容测试内容"
+    },
+    {
+      "id": "d2",
+      "title": "d2",
+      "content": "无换行符测试内容测试内容测试内容"
+    }
+  ],
+  "edges": [
+    {
+      "from": "a1",
+      "to": "b1"
+    },
+    {
+      "from": "a1",
+      "to": "b2"
+    },
+    {
+      "from": "b1",
+      "to": "c1"
+    },
+    {
+      "from": "b1",
+      "to": "c2"
+    },
+    {
+      "from": "b1",
+      "to": "c3"
+    },
+    {
+      "from": "b2",
+      "to": "c3"
+    },
+    {
+      "from": "c1",
+      "to": "d1"
+    },
+    {
+      "from": "c3",
+      "to": "d2"
+    }
+  ]
+}

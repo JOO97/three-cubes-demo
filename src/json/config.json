@@ -1,0 +1,510 @@
+[
+  {
+    "style": {
+      "layerText": {
+        "size": 0.8,
+        "height": 0.1,
+        "color": "#eeeeee"
+      },
+      "nodeText": {
+        "size": 0.3,
+        "height": 0.02,
+        "color": "#eeeeee"
+      },
+      "link": {
+        "lineStyle": "curve",
+        "linkRadius": 0.05,
+        "linkTexture": "http://localhost:7000/assets/sn-cp-platform3d/textures/resource-rnny0.png"
+      },
+      "camera": {
+        "type": "ortho",
+        "division": 122,
+        "position": {
+          "x": -22,
+          "y": 7.7,
+          "z": 26.4
+        }
+      }
+    },
+    "layers": [
+      {
+        "layerID": "-1",
+        "layerName": "单位",
+        "elevation": -8,
+        "size": 20,
+        "offsetX": 2,
+        "offsetZ": 0,
+        "extraX": 0,
+        "extraY": 0,
+        "texture": {
+          "layerUrl": "http://localhost:7000/assets/sn-cp-platform3d/textures/circuit.jpg"
+        },
+        "decro": {
+          "plate": {
+            "size": 25,
+            "color": "#39c2ec",
+            "edgeColor": "#51a6ea",
+            "opacity": 0.3
+          }
+        },
+        "node": {
+          "texture": {
+            "nodeUrl": "http://localhost:7000/assets/sn-cp-platform3d/textures/poly.jpg",
+            "activeUrl": "http://localhost:7000/assets/sn-cp-platform3d/textures/poly2.jpg"
+          },
+          "nodeSize": 1.2
+        }
+      },
+      {
+        "layerID": "0",
+        "layerName": "主题域",
+        "elevation": 0,
+        "size": 15,
+        "offsetX": 2,
+        "offsetZ": 0,
+        "extraX": 0,
+        "extraY": 0,
+        "texture": {
+          "layerUrl": "http://localhost:7000/assets/sn-cp-platform3d/textures/circuit.jpg"
+        },
+        "decro": {
+          "plate": {
+            "size": 20,
+            "color": "#39c2ec",
+            "edgeColor": "#51a6ea",
+            "opacity": 0.3
+          }
+        },
+        "node": {
+          "texture": {
+            "nodeUrl": "http://localhost:7000/assets/sn-cp-platform3d/textures/poly.jpg",
+            "activeUrl": "http://localhost:7000/assets/sn-cp-platform3d/textures/poly2.jpg"
+          },
+          "nodeSize": 1.2
+        }
+      },
+      {
+        "layerID": "1",
+        "layerName": "行业应用领域",
+        "elevation": 8,
+        "size": 6,
+        "offsetX": 1,
+        "offsetZ": 0,
+        "extraX": 0,
+        "extraY": 0,
+        "texture": {
+          "layerUrl": "http://localhost:7000/assets/sn-cp-platform3d/textures/circuit.jpg"
+        },
+        "decro": {
+          "plate": {
+            "size": 11,
+            "color": "#39c2ec",
+            "edgeColor": "#51a6ea",
+            "opacity": 0.3
+          }
+        },
+        "node": {
+          "texture": {
+            "nodeUrl": "http://localhost:7000/assets/sn-cp-platform3d/textures/poly.jpg",
+            "activeUrl": "http://localhost:7000/assets/sn-cp-platform3d/textures/poly2.jpg"
+          },
+          "nodeSize": 1.2
+        }
+      }
+    ],
+    "groups": [
+      {
+        "groupID": 1,
+        "layersID": 0
+      }
+    ],
+    "nodes": [
+      {
+        "nodeID": "1-1-1",
+        "layerID": "-1",
+        "name": "区水务集团",
+        "texture": {}
+      },
+      {
+        "nodeID": "1-1-2",
+        "layerID": "-1",
+        "name": "区人力社保局"
+      },
+      {
+        "nodeID": "1-1-3",
+        "layerID": "-1",
+        "name": "区税务局"
+      },
+      {
+        "nodeID": "1-1-4",
+        "layerID": "-1",
+        "name": "区科技局"
+      },
+      {
+        "nodeID": "1-1-5",
+        "layerID": "-1",
+        "name": "区教体局"
+      },
+      {
+        "nodeID": "1-1-6",
+        "layerID": "-1",
+        "name": "区公安分局"
+      },
+      {
+        "nodeID": "1-1-7",
+        "layerID": "-1",
+        "name": "区司法局"
+      },
+      {
+        "nodeID": "1-1-8",
+        "layerID": "-1",
+        "name": "区民政局"
+      },
+      {
+        "nodeID": "1-1-9",
+        "layerID": "-1",
+        "name": "区交通运输局"
+      },
+      {
+        "nodeID": "1-1-10",
+        "layerID": "-1",
+        "name": "区退役军人事务局"
+      },
+      {
+        "nodeID": "1-1-11",
+        "layerID": "-1",
+        "name": "区委政法委"
+      },
+      {
+        "nodeID": "1-1-12",
+        "layerID": "-1",
+        "name": "区市场监管局（区知识产权局）"
+      },
+      {
+        "nodeID": "1-1-13",
+        "layerID": "-1",
+        "name": "区自然资源和规划分局"
+      },
+      {
+        "nodeID": "1-1-14",
+        "layerID": "-1",
+        "name": "区消防大队"
+      },
+      {
+        "nodeID": "1-1-15",
+        "layerID": "-1",
+        "name": "区应急管理局"
+      },
+      {
+        "nodeID": "1-1-16",
+        "layerID": "-1",
+        "name": "区建设局"
+      },
+      {
+        "nodeID": "1-1-17",
+        "layerID": "-1",
+        "name": "区便民服务中心"
+      },
+      {
+        "nodeID": "1-1-18",
+        "layerID": "-1",
+        "name": "区综合执法局"
+      },
+      {
+        "nodeID": "1-1-19",
+        "layerID": "-1",
+        "name": "区大数据发展管理中心"
+      },
+      {
+        "nodeID": "1-1-20",
+        "layerID": "-1",
+        "name": "区统计局"
+      },
+      {
+        "nodeID": "1-1-21",
+        "layerID": "-1",
+        "name": "区卫生健康局"
+      },
+      {
+        "nodeID": "1-1-22",
+        "layerID": "-1",
+        "name": "区水利局"
+      },
+      {
+        "nodeID": "1-1-23",
+        "layerID": "-1",
+        "name": "区生态环境分局"
+      },
+      {
+        "nodeID": "1-1-24",
+        "layerID": "-1",
+        "name": "区文广旅游局"
+      },
+      {
+        "nodeID": "1-1-25",
+        "layerID": "-1",
+        "name": "曹娥江旅游度假区管理委员会"
+      },
+      {
+        "nodeID": "1-1-26",
+        "layerID": "-1",
+        "name": "区发改局"
+      },
+      {
+        "nodeID": "1-1-27",
+        "layerID": "-1",
+        "name": "区南丰社区"
+      },
+      {
+        "nodeID": "1-1-28",
+        "layerID": "-1",
+        "name": "曹娥江旅游度假区管委会"
+      },
+      {
+        "nodeID": "1-1-29",
+        "layerID": "-1",
+        "name": "区农业农村局"
+      },
+      {
+        "nodeID": "1-1-30",
+        "layerID": "-1",
+        "name": "区商务局"
+      },
+      {
+        "nodeID": "2-1-1",
+        "layerID": "0",
+        "name": "法人域"
+      },
+      {
+        "nodeID": "2-1-2",
+        "layerID": "0",
+        "name": "自然人"
+      },
+      {
+        "nodeID": "2-1-3",
+        "layerID": "0",
+        "name": "资产物品域"
+      },
+      {
+        "nodeID": "2-1-4",
+        "layerID": "0",
+        "name": "行为事件"
+      },
+      {
+        "nodeID": "2-1-5",
+        "layerID": "0",
+        "name": "电子证照"
+      },
+      {
+        "nodeID": "2-1-6",
+        "layerID": "0",
+        "name": "公共服务"
+      },
+      {
+        "nodeID": "2-1-7",
+        "layerID": "0",
+        "name": "地理空间"
+      },
+      {
+        "nodeID": "2-1-8",
+        "layerID": "0",
+        "name": "自然资源"
+      },
+      {
+        "nodeID": "2-1-9",
+        "layerID": "0",
+        "name": "城市资产"
+      },
+      {
+        "nodeID": "2-1-10",
+        "layerID": "0",
+        "name": "感知设备"
+      },
+      {
+        "nodeID": "2-1-11",
+        "layerID": "0",
+        "name": "宏观经济"
+      },
+      {
+        "nodeID": "3-1-1",
+        "layerID": "1",
+        "name": "政务服务"
+      },
+      {
+        "nodeID": "3-1-2",
+        "layerID": "1",
+        "name": "行政执法"
+      },
+      {
+        "nodeID": "3-1-3",
+        "layerID": "1",
+        "name": "一网统管"
+      },
+      {
+        "nodeID": "3-1-4",
+        "layerID": "1",
+        "name": "精密智控"
+      },
+      {
+        "nodeID": "3-1-5",
+        "layerID": "1",
+        "name": "数字孪生"
+      },
+      {
+        "nodeID": "3-1-6",
+        "layerID": "1",
+        "name": " 共同富裕"
+      }
+    ],
+    "links": [
+      {
+        "from": "2-1-1",
+        "to": "1-1-1"
+      },
+      {
+        "from": "2-1-1",
+        "to": "1-1-2"
+      },
+      {
+        "from": "2-1-1",
+        "to": "1-1-3"
+      },
+      {
+        "from": "2-1-1",
+        "to": "1-1-4"
+      },
+      {
+        "from": "2-1-1",
+        "to": "1-1-5"
+      },
+      {
+        "from": "2-1-2",
+        "to": "1-1-6"
+      },
+      {
+        "from": "2-1-2",
+        "to": "1-1-7"
+      },
+      {
+        "from": "2-1-2",
+        "to": "1-1-8"
+      },
+      {
+        "from": "2-1-2",
+        "to": "1-1-9"
+      },
+      {
+        "from": "2-1-2",
+        "to": "1-1-10"
+      },
+      {
+        "from": "2-1-2",
+        "to": "1-1-11"
+      },
+      {
+        "from": "2-1-2",
+        "to": "1-1-12"
+      },
+      {
+        "from": "2-1-3",
+        "to": "1-1-13"
+      },
+      {
+        "from": "2-1-3",
+        "to": "1-1-14"
+      },
+      {
+        "from": "2-1-3",
+        "to": "1-1-15"
+      },
+      {
+        "from": "2-1-3",
+        "to": "1-1-16"
+      },
+      {
+        "from": "2-1-4",
+        "to": "1-1-17"
+      },
+      {
+        "from": "2-1-4",
+        "to": "1-1-18"
+      },
+      {
+        "from": "2-1-5",
+        "to": "1-1-19"
+      },
+      {
+        "from": "2-1-6",
+        "to": "1-1-20"
+      },
+      {
+        "from": "2-1-6",
+        "to": "1-1-21"
+      },
+      {
+        "from": "2-1-7",
+        "to": "1-1-22"
+      },
+      {
+        "from": "2-1-7",
+        "to": "1-1-23"
+      },
+      {
+        "from": "2-1-7",
+        "to": "1-1-24"
+      },
+      {
+        "from": "2-1-8",
+        "to": "1-1-25"
+      },
+      {
+        "from": "2-1-8",
+        "to": "1-1-26"
+      },
+      {
+        "from": "2-1-9",
+        "to": "1-1-27"
+      },
+      {
+        "from": "2-1-9",
+        "to": "1-1-28"
+      },
+      {
+        "from": "2-1-11",
+        "to": "1-1-29"
+      },
+      {
+        "from": "2-1-11",
+        "to": "1-1-30"
+      },
+      {
+        "from": "3-1-1",
+        "to": "2-1-1"
+      },
+      {
+        "from": "2-1-1",
+        "to": "3-1-1"
+      },
+      {
+        "from": "2-1-1",
+        "to": "3-1-2"
+      },
+      {
+        "from": "2-1-1",
+        "to": "3-1-3"
+      },
+      {
+        "from": "2-1-3",
+        "to": "3-1-3"
+      },
+      {
+        "from": "2-1-3",
+        "to": "3-1-4"
+      },
+      {
+        "from": "2-1-3",
+        "to": "3-1-5"
+      }
+    ]
+  }
+]
