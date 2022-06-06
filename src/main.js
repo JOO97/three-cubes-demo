@@ -134,7 +134,8 @@ const createCubes = (pMesh) => {
     ({ layerId }) => layerId === pMesh.userData.id
   )
   const columns = Math.floor(Math.sqrt(currentCubes.length))
-  const rows = Math.floor(currentCubes.length / columns)
+  let rows = Math.floor(currentCubes.length / columns)
+  if (columns * rows < currentCubes.length) rows += 1
   const cubeSize = 0.12
   const cubeGroup = new THREE.Group()
   const pos = {
@@ -146,6 +147,7 @@ const createCubes = (pMesh) => {
   for (let column = 0; column < columns; column++) {
     for (let row = 0; row < rows; row++) {
       count++
+      if (count > currentCubes.length) return
       const cubeGeometry = new THREE.BoxBufferGeometry(
         cubeSize,
         cubeSize,
@@ -212,16 +214,17 @@ const testCurve = () => {}
  */
 const createFlyingLines = () => {
   const { edges } = data
+  console.log('cubes', cubes)
   edges.forEach((edge) => {
-    const sourceCube = cubes.find((item) => item.userData.id == edge.source)
-    const targetCube = cubes.find((item) => item.userData.id == edge.target)
-    console.log(targetCube, sourceCube)
+    const sourceCube = cubes.find((item) => item.userData.id === edge.source)
+    const targetCube = cubes.find((item) => item.userData.id === edge.target)
+    console.log(edge, targetCube, sourceCube)
     const curve = new THREE.QuadraticBezierCurve3(
       sourceCube.position,
       new THREE.Vector3(
-        Math.abs(sourceCube.position.x - targetCube.position.x) * 0.1,
-        Math.abs(sourceCube.position.y - targetCube.position.y) * 0.1,
-        Math.abs(sourceCube.position.z - targetCube.position.z) * 0.1
+        Math.abs(sourceCube.position.x - targetCube.position.x) * 0.5,
+        Math.abs(sourceCube.position.y - targetCube.position.y),
+        Math.abs(sourceCube.position.z) - Math.abs(targetCube.position.z) * 0.5
       ),
       targetCube.position
       // new THREE.Vector3(0, 0, 0),
@@ -242,7 +245,7 @@ const createFlyingLines = () => {
     const material = new THREE.MeshBasicMaterial({
       color: 0x00ff00,
       transparent: true,
-      opacity: 0.8
+      opacity: 0.5
     })
     // const points = curve.getPoints(50)
     // const geometry = new THREE.BufferGeometry().setFromPoints(points)
@@ -324,7 +327,7 @@ const init = () => {
   // gui.add(directionLight.position, 'z').min(-30).max(30).step(0.001)
   // scene.add(new THREE.DirectionalLightHelper(directionLight, 5))
 
-  scene.add(ambientLight, camera, new THREE.AxesHelper(100))
+  scene.add(ambientLight, camera)
 
   animate()
 }
