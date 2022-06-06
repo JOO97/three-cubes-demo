@@ -1,111 +1,90 @@
 {
-  "nodes": [
+  "layers": [
     {
-      "id": "a1",
-      "title": "a1",
-      "status": "success",
-      "content": "测试内容\r\n测试内容测试内容"
-    },
-    {
-      "id": "b1",
-      "title": "b1",
-      "status": "warning",
-      "content": "测试异常异常\r\n测试测试异常异常内容"
-    },
-    {
-      "id": "b2",
-      "title": "b2",
-      "status": "error",
-      "content": "成功节点成功节点"
-    },
-    {
-      "id": "c1",
-      "title": "c1",
-      "status": "default",
-      "content": "无换行符测试内容测试内容测试内容"
-    },
-    {
-      "id": "c2",
-      "title": "c2",
-      "status": "error",
-      "content": [
-        {
-          "label": "姓名",
-          "value": "张三"
-        },
-        {
-          "label": "年龄",
-          "value": "18"
-        },
-        {
-          "label": "时间",
-          "value": "2018-09-07"
-        },
-        {
-          "label": "描述",
-          "value": "xxxxxxxxxxxxxxxxxxxxxxxx"
-        }
-      ]
-    },
-    {
-      "id": "c3",
-      "title": "c3",
-      "content": "无换行符测试内容测试内容测试内容",
-      "info": {
-        "serviceOrderCode": "LBX032749142837532",
-        "serviceNodeCode": null,
-        "serviceNodeName": "交易出库",
-        "status": 1,
-        "userType": "seller",
-        "feeCode": null,
-        "feeName": null,
-        "statusStr": "未发起计费"
+      "id": 1,
+      "name": "单位",
+      "size": 2,
+      "colors": {
+        "main": "#5dd9ff",
+        "sub": "#39e2ec"
       }
     },
     {
-      "id": "d1",
-      "title": "d1",
-      "status": "blue",
-      "content": "无换行符测试内容测试内容测试内容"
+      "id": 2,
+      "name": "主题域",
+      "size": 1.4,
+      "colors": {
+        "main": "#5dd9ff",
+        "sub": "#39e2ec"
+      }
     },
     {
-      "id": "d2",
-      "title": "d2",
-      "content": "无换行符测试内容测试内容测试内容"
+      "id": 3,
+      "name": "行业应用领域",
+      "size": 1.0,
+      "colors": {
+        "main": "#5dd9ff",
+        "sub": "#39e2ec"
+      }
     }
+  ],
+  "cubes": [
+    { "layerId": 1, "id": "1" },
+    { "layerId": 1, "id": "2" },
+    { "layerId": 1, "id": "3" },
+    { "layerId": 1, "id": "4" },
+    { "layerId": 1, "id": "5" },
+    { "layerId": 1, "id": "6" },
+    { "layerId": 1, "id": "7" },
+    { "layerId": 1, "id": "8" },
+    { "layerId": 1, "id": "9" },
+    { "layerId": 1, "id": "10" },
+    { "layerId": 1, "id": "11" },
+    { "layerId": 1, "id": "12" },
+    { "layerId": 1, "id": "13" },
+    { "layerId": 1, "id": "14" },
+    { "layerId": 1, "id": "15" },
+    { "layerId": 1, "id": "16" },
+    { "layerId": 1, "id": "17" },
+    { "layerId": 1, "id": "18" },
+    { "layerId": 1, "id": "19" },
+    { "layerId": 1, "id": "20" },
+    { "layerId": 1, "id": "21" },
+    { "layerId": 1, "id": "22" },
+    { "layerId": 1, "id": "23" },
+    { "layerId": 1, "id": "24" },
+    { "layerId": 1, "id": "25" },
+    { "layerId": 1, "id": "26" },
+    { "layerId": 1, "id": "27" },
+    { "layerId": 1, "id": "28" },
+    { "layerId": 1, "id": "29" },
+    { "layerId": 1, "id": "30" },
+    { "layerId": 2, "id": "31" },
+    { "layerId": 2, "id": "32" },
+    { "layerId": 2, "id": "33" },
+    { "layerId": 2, "id": "34" },
+    { "layerId": 2, "id": "35" },
+    { "layerId": 2, "id": "36" },
+    { "layerId": 2, "id": "37" },
+    { "layerId": 2, "id": "38" },
+    { "layerId": 2, "id": "39" },
+    { "layerId": 2, "id": "40" },
+    { "layerId": 2, "id": "41" },
+    { "layerId": 3, "id": "42" },
+    { "layerId": 3, "id": "43" },
+    { "layerId": 3, "id": "44" },
+    { "layerId": 3, "id": "45" },
+    { "layerId": 3, "id": "46" },
+    { "layerId": 3, "id": "47" }
   ],
   "edges": [
     {
-      "from": "a1",
-      "to": "b1"
+      "source": "1",
+      "target": "35"
     },
     {
-      "from": "a1",
-      "to": "b2"
-    },
-    {
-      "from": "b1",
-      "to": "c1"
-    },
-    {
-      "from": "b1",
-      "to": "c2"
-    },
-    {
-      "from": "b1",
-      "to": "c3"
-    },
-    {
-      "from": "b2",
-      "to": "c3"
-    },
-    {
-      "from": "c1",
-      "to": "d1"
-    },
-    {
-      "from": "c3",
-      "to": "d2"
+      "source": "5",
+      "target": "31"
     }
   ]
 }
