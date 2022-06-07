@@ -45,7 +45,7 @@ const cubeMaps = [
 ]
 
 const tubeMaterial = new THREE.ShaderMaterial({
-  // color: 0xee0000,
+  color: 0xee0000,
   // transparent: true,
   // opacity: 0.5,
   vertexShader,
