@@ -4,6 +4,9 @@ import { FontLoader } from 'three/examples/jsm/loaders/FontLoader'
 import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry'
 import * as dat from 'dat.gui'
 
+import vertexShader from './shader/vertex.glsl'
+import fragmentShader from './shader/fragment.glsl'
+
 import data from './json/data.json'
 
 const gui = new dat.GUI({ width: 400 })
@@ -40,6 +43,18 @@ const cubeMaps = [
   textureLoader.load('poly.jpg'),
   textureLoader.load('resource-usa86.png')
 ]
+
+const tubeMaterial = new THREE.ShaderMaterial({
+  // color: 0xee0000,
+  // transparent: true,
+  // opacity: 0.5,
+  vertexShader,
+  fragmentShader,
+  uniforms: {
+    uTime: { value: 0 },
+    uTexture: { value: textureLoader.load('resource-3exds.png') }
+  }
+})
 
 //Raycaster
 const raycaster = new THREE.Raycaster()
@@ -205,55 +220,87 @@ class CustomSinCurve extends THREE.Curve {
 }
 
 /**
- * curve
- */
-const testCurve = () => {}
-
-/**
  * create flying lines
  */
 const createFlyingLines = () => {
   const { edges } = data
-  console.log('cubes', cubes)
+  let mesh = null
+  const pos = {
+    x: 0,
+    y: 0,
+    z: 0
+  }
+
   edges.forEach((edge) => {
     const sourceCube = cubes.find((item) => item.userData.id === edge.source)
     const targetCube = cubes.find((item) => item.userData.id === edge.target)
-    console.log(edge, targetCube, sourceCube)
-    const curve = new THREE.QuadraticBezierCurve3(
-      sourceCube.position,
-      new THREE.Vector3(
-        Math.abs(sourceCube.position.x - targetCube.position.x) * 0.5,
-        Math.abs(sourceCube.position.y - targetCube.position.y),
-        Math.abs(sourceCube.position.z) - Math.abs(targetCube.position.z) * 0.5
+
+    // function update() {
+    //   console.log('mesh', mesh)
+    //   if (mesh) {
+    //     scene.remove(mesh)
+    //     mesh = null
+    //   }
+    // }
+    const geometry = new THREE.TubeGeometry(
+      new THREE.QuadraticBezierCurve3(
+        sourceCube.position,
+        new THREE.Vector3(
+          // pos.x,
+          // pos.y,
+          // pos.z,
+          0.02,
+          sourceCube.position.y + 0.1,
+          0.02
+        ),
+        targetCube.position
       ),
-      targetCube.position
-      // new THREE.Vector3(0, 0, 0),
-      // new THREE.Vector3(
-      //   targetCube.position.x * Math.random(),
-      //   targetCube.position.y * Math.random(),
-      //   targetCube.position.z * Math.random()
-      // ),
-      // new THREE.Vector3(0.3, 0.6, 0.6)
+      20,
+      0.005,
+      8,
+      false
     )
-    console.log(
-      'curve',
-      Math.abs(sourceCube.position.x - targetCube.position.x),
-      Math.abs(sourceCube.position.y - targetCube.position.y),
-      Math.abs(sourceCube.position.z - targetCube.position.z)
-    )
-    const geometry = new THREE.TubeGeometry(curve, 20, 0.005, 8, false)
-    const material = new THREE.MeshBasicMaterial({
-      color: 0x00ff00,
-      transparent: true,
-      opacity: 0.5
-    })
-    // const points = curve.getPoints(50)
-    // const geometry = new THREE.BufferGeometry().setFromPoints(points)
-    // const material = new THREE.LineBasicMaterial({ color: 0x00ff00 })
-    // const mesh = new THREE.Line(geometry, material)
-    const mesh = new THREE.Mesh(geometry, material)
-    // mesh.position.y = 0.5
+    // const tubeTexture = textureLoader.load('resource-3exds.png')
+    // tubeTexture.wrapS = THREE.RepeatWrapping
+    // tubeTexture.wrapT = THREE.RepeatWrapping
+    // tubeTexture.repeat.set(2, 5)
+    // const material = new THREE.MeshBasicMaterial({
+    //   map: tubeTexture
+    // })
+
+    mesh = new THREE.Mesh(geometry, tubeMaterial)
     scene.add(mesh)
+    // gui
+    //   .add(pos, 'x')
+    //   .min(-1)
+    //   .max(1)
+    //   .step(0.01)
+    //   .name('middle x')
+    //   .onChange((value) => {
+    //     pos.x = value
+    //     update()
+    //   })
+    // gui
+    //   .add(pos, 'y')
+    //   .min(-1)
+    //   .max(1)
+    //   .step(0.01)
+    //   .name('middle y')
+    //   .onChange((value) => {
+    //     console.log('update y')
+    //     pos.y = value
+    //     update()
+    //   })
+    // gui
+    //   .add(pos, 'z')
+    //   .min(-1)
+    //   .max(1)
+    //   .step(0.01)
+    //   .name('middle z')
+    //   .onChange((value) => {
+    //     pos.z = value
+    //     update()
+    //   })
   })
 }
 
@@ -327,12 +374,20 @@ const init = () => {
   // gui.add(directionLight.position, 'z').min(-30).max(30).step(0.001)
   // scene.add(new THREE.DirectionalLightHelper(directionLight, 5))
 
-  scene.add(ambientLight, camera)
+  scene.add(ambientLight, camera, new THREE.AxesHelper(100))
 
   animate()
 }
 
+let clock = new THREE.Clock()
+let pre = 0
 const animate = () => {
+  const elapsedTime = clock.getElapsedTime()
+  // const delta = elapsedTime - pre //差值
+  pre = elapsedTime
+
+  tubeMaterial.uniforms.uTime.value = elapsedTime
+
   requestAnimationFrame(animate)
   renderer.render(scene, camera)
   controls.update()
